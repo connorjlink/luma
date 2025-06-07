@@ -34,7 +34,7 @@ public partial class LumaViewModel : INotifyPropertyChanged
 	private static readonly RenderMode[] _renderModesAll = [RenderMode.Raytrace, RenderMode.Pathtrace];
 	public static readonly List<string> RenderModes = [.. _renderModesAll.Select(m => m.ToString().ToLower())];
 
-	private static readonly uint DEFAULT_WIDTH = 700;
+	private static readonly uint DEFAULT_WIDTH = 738;
 	private static readonly uint DEFAULT_HEIGHT = 500;
 	private static readonly uint DEFAULT_SAMPLES = 1;
 	private static readonly uint DEFAULT_BOUNCES = 2;
@@ -575,7 +575,7 @@ public partial class LumaViewModel : INotifyPropertyChanged
 			}
 			catch (Exception ex)
 			{
-				PostNotification(LumaViewModel.ERROR_GLYPH, "Failed to kill the render process", $"Failed to kill the render subprocess: {ex.Message}");
+				PostNotification(ERROR_GLYPH, "Failed to kill the render process", $"Failed to kill the render subprocess: {ex.Message}");
 			}
 		}
 	}
@@ -603,13 +603,13 @@ public partial class LumaViewModel : INotifyPropertyChanged
 			_renderProcess.Exited += HandleProcessDisconnected;
 			_renderProcess.Start();
 			_renderProcess.BeginOutputReadLine();
-			InitializeSharedMemory();
 			IsConnected = true;
+			InitializeSharedMemory();
 			PostNotification(INFO_GLYPH, "Render process started", $"Render process started with arguments: {args}");
 		}
 		catch (Exception ex)
 		{
-			StopRenderer();
+			//StopRenderer();
 			PostNotification(ERROR_GLYPH, "Failed to launch the render process", $"Error starting the render process: {ex.Message}");
 		}
 	}
