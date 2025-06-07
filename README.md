@@ -6,7 +6,7 @@ Luma frontend (_luma_) is an elegant and modern C#/WinUI 3-based Window desktop 
 ## RUN INSTRUCTIONS
 Clone this repository and its sibling project _raytracer_, then open _raytracer.sln_ in Visual Studio 2022. Select _luma_ as the startup project, set the build mode to _Connected_ (a custom compile option adjacent to Debug/Release), and then compile and run the project. This frontend C# program will automatically master the C++/Rust-side build and subprocess the primary rendering work upon opening.
 
-# PLANNED FEATURES
+## PLANNED FEATURES
 - More granular render option control
 - Looser subprocess integration to enable running third-party backends
 - Robust error handling and logging to lessen the impact of backend issues that currently also affect the frontend
