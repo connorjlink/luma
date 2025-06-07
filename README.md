@@ -1,5 +1,5 @@
 # LUMA FRONTEND
-Luma frontend (_luma_) is an elegant and modern C#/WinUI 3-based Window desktop application used as a graphical frontend for the luma ray-tracing program. The app communicates with a render subprocess—of which there are currently two choices—uisng native Windows IPC methods: either shared-memory software rendering or hardware-accelerated blitting via GPU compute. The app presents a series of rendering options to control the visual fidelity of the rendered output and a detailed status reporting system that depicts system load and application performance metrics.
+Luma frontend (_luma_) is an elegant and modern C#/WinUI 3-based Window desktop application used as a graphical frontend for the luma ray-tracing program. The app communicates with a render subprocess—of which there are currently two choices—using native Windows IPC methods: either shared-memory software rendering (via memory-mapping files) or hardware-accelerated blitting via GPU compute (via DirectX/wgpu). The app presents a series of rendering options to control the visual fidelity of the rendered output and a detailed status reporting system that depicts system load and application performance metrics.
 
 ![Luma Frontend Example Output Image](/example.png)
 
