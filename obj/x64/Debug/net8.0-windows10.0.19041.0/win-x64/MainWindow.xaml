@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:ConnectionId='1'
+	x:Class="luma.MainWindow"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="using:luma"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:controls="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d"
+	Title="luma">
+
+    <Grid x:ConnectionId='2' x:Name="MainGrid">
+        <Grid.Resources>
+            <MenuFlyout x:Key="NotificationFlyout">
+                <MenuFlyout.Items>
+                </MenuFlyout.Items>
+            </MenuFlyout>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		
+		<SplitView Grid.Row="0"
+				   IsPaneOpen="True"
+				   DisplayMode="Inline">
+            
+            <SplitView.Pane>
+                
+                <Grid Grid.Row="0">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0"
+								Orientation="Horizontal">
+
+                        <TextBlock Text="Luma Settings"
+								   FontSize="18"
+								   FontWeight="Bold"
+								   HorizontalAlignment="Center"
+								   Margin="10" />
+
+                        <FontIcon x:ConnectionId='27'                                                     
+                                  FontSize="18" 
+                                  FontFamily="Segoe Fluent Icons" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1"
+                                Orientation="Vertical"
+                                Margin="20,5,20,20">
+
+                        <TextBlock x:ConnectionId='21' Text="Note: there are unsaved changes that require restarting the render process to apply."
+                                   TextWrapping="Wrap"
+                                   Foreground="Gold"
+                                                                                                 
+                                   Margin="0,0,0,20" />
+
+                        <Grid HorizontalAlignment="Stretch"
+                              Margin="0,10,0,0">
+                            
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0"
+                                       Text="Enable Accumulation"  
+                                       VerticalAlignment="Center" />
+                            
+                            <ToggleSwitch x:ConnectionId='26' Grid.Column="1"
+                                                                                                       />
+                        </Grid>
+
+                        <Grid HorizontalAlignment="Stretch"
+                              Margin="0,10,0,0">
+                            
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0"
+                                       Text="Bounces"
+                                       VerticalAlignment="Center"/>
+
+                            <Slider x:ConnectionId='25' Grid.Column="1"
+                                    Minimum="1"
+                                    Maximum="10"
+                                    Width="130"
+                                    TickFrequency="1"
+                                    TickPlacement="Outside"
+                                                                                    />
+                        </Grid>
+
+                        <Grid HorizontalAlignment="Stretch"
+                              Margin="0,10,0,0">
+                            
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0"
+                                       Text="Samples Per Pixel"
+                                       VerticalAlignment="Center"/>
+                            
+                            <Slider x:ConnectionId='24' Grid.Column="1"
+                                    Minimum="1"
+                                    Maximum="5"
+                                    Width="130"
+                                    TickFrequency="1"
+                                    TickPlacement="Outside"
+                                                                                    />
+
+                        </Grid>
+
+                        <Grid HorizontalAlignment="Stretch"
+                              Margin="0,10,0,0">
+                            
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0"
+                                       Text="Render Width"
+                                       VerticalAlignment="Center"/>
+                            
+                            <TextBox x:ConnectionId='23' Grid.Column="1"
+                                                                                 
+                                     Width="130" />
+
+                        </Grid>
+
+                        <Grid HorizontalAlignment="Stretch"
+                              Margin="0,10,0,0">
+                            
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0"
+                                       Text="Render Height"
+                                       VerticalAlignment="Center" />
+                            
+                            <TextBox x:ConnectionId='22' Grid.Column="1"
+                                                                                  
+                                     Width="130" />
+
+                        </Grid>
+
+                    </StackPanel>
+
+                    <Grid Grid.Row="2"
+                          HorizontalAlignment="Stretch"
+                          Margin="10,0,25,10">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <Button x:ConnectionId='19' Grid.Column="0"
+                                Content="Save Settings"
+                                HorizontalAlignment="Stretch"
+                                                                                             
+                                Margin="5"
+                                                              />
+
+                        <Button x:ConnectionId='20' Grid.Column="1"
+                                                                                           
+                                HorizontalAlignment="Stretch"
+                                                        />
+
+                    </Grid>
+                </Grid>
+            </SplitView.Pane>
+            
+            <SplitView.Content>
+                <Image x:ConnectionId='28'                                                            />
+            </SplitView.Content>
+		</SplitView>
+
+        <Grid x:ConnectionId='3' Grid.Row="1" 
+			  Grid.ColumnSpan="2" 
+			                                                >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="1"
+                        Orientation="Horizontal">
+                
+                <Button x:ConnectionId='15' x:Name="NotificationButton"
+                                                                
+                        Margin="2">
+                    
+                    <FontIcon x:ConnectionId='18'                                                    
+                              FontSize="18" 
+                              FontFamily="Segoe Fluent Icons" />
+                </Button>
+
+                <TextBlock x:ConnectionId='16' VerticalAlignment="Center"
+                           Margin="5,0,0,0"
+                                                                               
+                           Foreground="White"
+                                                                                                  />
+
+                <FontIcon x:ConnectionId='17'                                                   
+                          VerticalAlignment="Center"
+                          FontSize="18" 
+                          FontFamily="Segoe Fluent Icons" 
+                          Margin="5" />
+            </StackPanel>
+            
+            <!-- dummy spacer -->
+            <Grid Grid.Column="2" />
+
+            <StackPanel x:ConnectionId='4' Grid.Column="3"
+                        Orientation="Horizontal"
+                                                                       >
+
+                <FontIcon x:ConnectionId='5'                                                
+                          FontSize="18" 
+                          FontFamily="Segoe Fluent Icons" 
+                          Margin="5"
+                          VerticalAlignment="Center"
+                          ToolTipService.ToolTip="Total System CPU Utilization" />
+
+                <TextBlock x:ConnectionId='6'                                                
+                           VerticalAlignment="Center"
+                           Margin="5"
+                           Foreground="White" />
+
+                <!-- vertical separator -->
+                <Rectangle Width="1"
+                           Height="20"
+                           Fill="White"
+                           VerticalAlignment="Center"
+                           Margin="10,0"/>
+
+                <FontIcon x:ConnectionId='7'                                                
+                          FontSize="18" 
+                          FontFamily="Segoe Fluent Icons" 
+                          Margin="5"
+                          VerticalAlignment="Center"
+                          ToolTipService.ToolTip="Managed Process RAM Consumption (Not including that consumed by the render worker)" />
+
+                <TextBlock x:ConnectionId='8'                                                
+                           VerticalAlignment="Center"
+                           Margin="5, 5, 10, 5"
+                           Foreground="White" />
+
+                <!-- vertical separator -->
+                <Rectangle Width="1"
+                           Height="20"
+                           Fill="White"
+                           VerticalAlignment="Center"
+                           Margin="10,0" />
+
+                <FontIcon x:ConnectionId='9'                                                 
+                          FontSize="18" 
+                          FontFamily="Segoe Fluent Icons" 
+                          Margin="5"
+                          VerticalAlignment="Center"
+                          ToolTipService.ToolTip="Shading Fill Rate" />
+
+                <TextBlock x:ConnectionId='10'                                                
+                           VerticalAlignment="Center"
+                           Margin="5, 5, 10, 5"
+                           Foreground="White" />
+
+                <!-- vertical separator -->
+                <Rectangle Width="1"
+                           Height="20"
+                           Fill="White"
+                           VerticalAlignment="Center"
+                           Margin="10,0" />
+
+                <FontIcon x:ConnectionId='11'                                                 
+                          FontSize="18" 
+                          FontFamily="Segoe Fluent Icons" 
+                          Margin="5"
+                          VerticalAlignment="Center"
+                          ToolTipService.ToolTip="Last Frame Time" />
+
+                <TextBlock x:ConnectionId='12'                                                 
+                           VerticalAlignment="Center"
+                           Margin="5, 5, 10, 5"
+                           Foreground="White" />
+
+                <!-- vertical separator -->
+                <Rectangle Width="1"
+                           Height="20"
+                           Fill="White"
+                           VerticalAlignment="Center"
+                           Margin="10,0" />
+
+                <FontIcon x:ConnectionId='13'                                                     
+                          FontSize="18" 
+                          FontFamily="Segoe Fluent Icons" 
+                          Margin="5"
+                          VerticalAlignment="Center"
+                          ToolTipService.ToolTip="Total Number of Frames Rendered" />
+
+                <TextBlock x:ConnectionId='14'                                                   
+                           VerticalAlignment="Center"
+                           Margin="5, 5, 10, 5"
+                           Foreground="White" />
+
+            </StackPanel>
+        </Grid>
+	</Grid>
+</Window>
+

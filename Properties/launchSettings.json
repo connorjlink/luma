@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "luma (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "luma (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
